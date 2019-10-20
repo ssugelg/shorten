@@ -80,21 +80,7 @@ ___
 * Spring port : 8080
 * Redis port : 6379
 
-```bash
-$ gradle build
-
-$ gradle bootRun
-```
-
-혹은
-
-```bash
-$ java -jar shorten-0.0.1-SNAPSHOT.jar
-```
-
-## 최초 설치
-
-### Docker 
+#### Docker - Redis
 
 ```bash
 $ docker pull redis:latest
@@ -104,27 +90,27 @@ $ docker pull redis:latest
 $ docker run -p 6379:6379 --name redis_boot -d redis
 ```
 
-### Spring Boot Project Files
+#### Spring Boot Project Files
 
 ```bash
 $ gradle build
 ```
 
-## 프로젝트 기동
+### 프로젝트 기동
 
-### Redis 기동
+#### Redis 기동
 
 ```bash
 $ docker start redis_boot 
 ```
 
-### Redis 접속
+#### Redis 접속
 
 ```bash
 $ docker exec -it redis_boot redis-cli
 ```
 
-### 실행
+#### 실행
 
 ```bash
 $ gradle build
