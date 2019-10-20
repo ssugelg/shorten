@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="김명석">
+        <meta name="keywords" content="URL, Shorten">
+        <meta name="description" content="단축 URL 서비스 제공">
+        <title>Internal Server Error</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+    <div class="container">
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">서버 에러33333</h4>
+            <p>일시적인 현상에 의해 서비스가 중단되었습니다.</p>
+            <div style="display: none">
+                <p th:text="${message}"></p>
+                <p th:text="${status}"></p>
+                <p th:text="${stackTrace}"></p>
+            </div>
+            <hr>
+            <p class="mb-0">관리자에게 문의 하시기 바랍니다.</p>
+        </div>
+    </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        /**
+         * 에러화면 8초간 노출 후 메인화면으로 이동합니다.
+         */
+        $(document).ready(function () {
+            setTimeout(function () {
+                if (confirm("메인 페이지로 이동합니다.")) {
+                    location.href = "/";
+                }
+            }, 8000)
+        });
+    </script>
+</html>

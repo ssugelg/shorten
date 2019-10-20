@@ -1,0 +1,12 @@
+com.shorten
+com.shorten.advice
+com.shorten.api
+com.shorten.config
+com.shorten.crypto
+com.shorten.crypto.algorithm
+com.shorten.crypto.policy
+com.shorten.exception
+com.shorten.model
+com.shorten.redis
+com.shorten.utils
+com.shorten.web

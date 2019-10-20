@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="김명석">
+        <meta name="keywords" content="URL, Shorten">
+        <meta name="description" content="단축 URL 서비스 제공">
+        <title>단축 URL 서비스 제공</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            input#encryptUrl {
+                box-shadow: none !important;
+                outline: none !important;
+                border-color: gray !important;
+            }
+
+            input#encryptUrl.valid {
+                box-shadow: dodgerblue 0 0px 10px 0px !important;
+            }
+
+            input#encryptUrl.invalid {
+                box-shadow: mediumvioletred 0 0px 10px 0px !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>단축 URL 만들기</h1>
+            <div class="alert alert-success" role="alert" style="display: none;">
+                <h4 class="alert-heading">변환성공!</h4>
+                <p>
+                    <span></span>
+                    ->
+                    <a href="" target="_blank"></a>
+                </p>
+                <hr>
+                <p class="mb-0">위 경로를 주소창에 넣으면 실제 변환전 경로로 리다이렉트 됩니다.</p>
+            </div>
+            <div class="form-group">
+                <label for="encryptUrl">자동 검사</label>
+                <input type="checkbox" id="auto_valid" checked="true" onclick="utils.toggleAutoCheck()">
+                <input type="url" class="form-control" id="encryptUrl" aria-describedby="urlHelp" placeholder="변환할 URL">
+                <small id="urlHelp" class="form-text text-muted"><b>8 Character</b> 로 구성된 단축 URL 경로를 반환합니다.<br/>프로토콜(http/https)를 미 기입시 <b>http 가 기본으로 설정</b>됩니다.</small>
+            </div>
+            <button id="shortenBtn" class="btn btn-primary" type="button" onclick="javascript:shorten()">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                Shortening
+            </button>
+        </div>
+    </body>
+    <!--  Bootstrap  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--  Business Logic  -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="/resources/shorten.js"></script>
+</html>
